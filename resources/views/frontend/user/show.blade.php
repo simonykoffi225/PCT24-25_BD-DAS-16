@@ -1,0 +1,158 @@
+@extends('layouts.appactenaissance')
+@section('content')
+
+{{-- @extends('layouts.sidebar')
+@section('sidebar') --}}
+
+<section class="pt-sm-7">
+	<div class="container pt-3 pt-xl-5">
+		<div class="row">
+			<!-- Sidebar -->
+			<div class="col-lg-4 col-xl-3">
+				<!-- Responsive offcanvas body START -->
+				<div class="offcanvas-lg offcanvas-start h-100" tabindex="-1" id="offcanvasSidebar">
+					<!-- Offcanvas header -->
+					<div class="offcanvas-header bg-light">
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Mon profil</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
+					</div>
+					<!-- Offcanvas body -->
+					<div class="offcanvas-body p-0">
+						<div class="card border p-3 w-100">
+							<!-- Card header -->
+							<div class="card-header text-center border-bottom">
+                                <!-- Avatar -->
+                                <div class="avatar avatar-xl position-relative mb-2">
+                                    @if(Auth::user()->avatar)
+                                        <img class="avatar-img rounded-circle border-2 border-white" src="{{ Auth::user()->avatar }}" alt="Avatar">
+                                    @else
+                                        <!-- Avatar avec initiales -->
+                                        <div class="avatar-initials rounded-circle  border-2 border-white d-flex align-items-center justify-content-center text-white" 
+                                            style="width: 80px; height: 80px; font-size: 24px; background-color: {{ '#' . substr(md5(Auth::user()->name), 0, 6) }};">
+                                            {{ substr(Auth::user()->name, 0, 2) }}
+                                        </div>
+                                    @endif
+                                    {{-- <a href="#" class="btn btn-sm btn-round btn-dark position-absolute top-50 start-100 translate-middle mt-4 ms-n3" data-bs-toggle="tooltip" data-bs-title="Modifier le profil">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a> --}}
+                                </div>
+                                <h6 class="mb-0">{{ Auth::user()->name }}</h6>
+                                <a href="mailto:{{ Auth::user()->email }}" class="text-reset text-primary-hover small">{{ Auth::user()->email }}</a>
+                            </div>
+
+							<!-- Card body START -->
+							<div class="card-body p-0 mt-4">
+								<!-- Sidebar menu item START -->
+								<ul class="nav nav-pills-primary-border-start flex-column">
+									@auth
+										@if(auth()->user()->isAdmin())
+											<li class="nav-item">
+												<a class="nav-link {{ request()->routeIs('account') ? 'active' : '' }}" href="{{ route('account')}}">
+													<i class="bi bi-people fa-fw me-2"></i>Liste des comptes
+												</a>
+											</li>
+										@endif
+										@if(auth()->user()->isAdmin() || auth()->user()->isOfficier())
+											<li class="nav-item">
+												<a class="nav-link {{ request()->routeIs('listeactenaissance') ? 'active' : '' }}" href="{{ route('listeactenaissance')}}">
+													<i class="bi bi-file-earmark-text fa-fw me-2"></i>Liste acte naissance
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link {{ request()->routeIs('listeactemariage') ? 'active' : '' }}" href="{{ route('listeactemariage')}}">
+													<i class="bi bi-heart fa-fw me-2"></i>Liste acte mariage
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link {{ request()->routeIs('listeactedeces') ? 'active' : '' }}" href="{{ route('listeactedeces')}}">
+													<i class="bi bi-emoji-frown fa-fw me-2"></i>Liste acte décès
+												</a>
+											</li>
+										@endif
+									@endauth
+									@auth
+									<li class="nav-item">
+										<form action="{{ route('logout') }}" method="POST">
+											@csrf
+											<button type="submit" class="nav-link text-danger bg-transparent border-0 w-100 text-start">
+												<i class="fas fa-sign-out-alt fa-fw me-2"></i>Déconnexion
+											</button>
+										</form>
+									</li>
+									@endauth
+								</ul>
+								<!-- Sidebar menu item END -->
+							</div>
+							<!-- Card body END -->
+						</div>
+					</div>
+				</div>		
+			</div>
+
+<div class="col-lg-8 col-xl-9 ps-lg-4 ps-xl-6">
+    <!-- Title and offcanvas button -->
+    <div class="d-flex justify-content-between align-items-center mb-5 mb-sm-6">
+        <!-- Title -->
+        <h1 class="h3 mb-0">Détails de l'utilisateur</h1>
+
+        <!-- Back button -->
+        <a href="{{ route('account') }}" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Retour
+        </a>
+    </div>
+
+    <!-- User details card -->
+    <div class="card">
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-4 fw-bold">ID:</div>
+                <div class="col-md-8">{{ $user->id }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 fw-bold">Nom:</div>
+                <div class="col-md-8">{{ $user->name }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 fw-bold">Email:</div>
+                <div class="col-md-8">{{ $user->email }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 fw-bold">Rôle:</div>
+                <div class="col-md-8">{{ $user->role }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 fw-bold">Contact:</div>
+                <div class="col-md-8">{{ $user->contact ?? 'Non renseigné' }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 fw-bold">Date de naissance:</div>
+                <div class="col-md-8">
+                    {{ $user->date_naissance ? $user->date_naissance->format('d/m/Y') : 'Non renseignée' }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 fw-bold">Genre:</div>
+                <div class="col-md-8">{{ $user->genre ?? 'Non renseigné' }}</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4 fw-bold">Date de création:</div>
+                <div class="col-md-8">{{ $user->created_at->format('d/m/Y H:i') }}</div>
+            </div>
+            @if($user->signature)
+    <div>
+        <p>Chemin de la signature: {{ $user->signature }}</p>
+        <img src="{{ asset('storage/'.$user->signature) }}" alt="Signature" style="max-width: 200px;">
+    </div>
+@else
+    <p>Aucune signature enregistrée</p>
+@endif
+            <div class="card-footer">
+    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">
+        <i class="bi bi-pencil"></i> Modifier
+    </a>
+</div>
+        </div>
+    </div>
+</div>
+{{-- @stop --}}
+@endsection
