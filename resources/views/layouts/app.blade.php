@@ -86,6 +86,13 @@
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+	<!-- Boostrap CSS-->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+	<!-- FontAwesome (si tu utilises les icônes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DEXFC3C67M"></script>
 
@@ -114,6 +121,9 @@
         color: #6c757d;
     }
 </style>
+
+@yield('styles')
+
 </head>
 
 <body>
@@ -502,5 +512,12 @@ Footer END -->
         }
     }, 10000); // 10 secondes maximum
 </script>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+@yield('scripts')
+
 </body>
 </html>
