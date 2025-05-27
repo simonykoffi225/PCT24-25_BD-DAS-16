@@ -1,5 +1,43 @@
-@extends('layouts.app')
-@section('content')
+
+
+<!-- Top bar FLASH INFO -->
+<div style="background-color: #009345; height: 70px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);" class="text-white px-4">
+    <div style="display: flex; align-items: center; gap: 15px;">
+       | <span class="badge" style="background-color: #c72026; color: white; padding: 8px 12px; font-size: 16px;">
+    FLASH INFO
+		</span>|
+
+			<div style="width: 400px; overflow: hidden;">
+				<marquee behavior="scroll" direction="left" scrollamount="4">
+					<span style="color: white; font-size: 16px;">
+						<i>Le Directeur de l'état civil vous souhaite une très belle fête à tous !</i>
+					</span>
+				</marquee>
+			</div>
+    </div>
+	</div>
+
+
+
+
+
+
+<!-- Espace entre top bar et menu -->
+<div style="height: 10px;"></div>
+
+<!-- Menu principal -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    @extends('layouts.app')
+@section('content') 
+</nav>
+
+
+
+
+
+
+
+
 <section class="position-relative overflow-hidden pb-0 pt-xl-9">
 	<!-- SVG decoration -->
 	<div class="position-absolute top-0 start-0 ms-n7 d-none d-xl-block">
@@ -28,7 +66,7 @@
 			<!-- Hero content START -->
 			<div class="col-xl-7 mb-5 mb-xl-0">
 				<div class="pe-xxl-4">
-					<span class="heading-color d-inline-block bg-light small rounded-3 px-3 py-2">🤩 Page d’accueil publique</span>
+					<!-- <span class="heading-color d-inline-block bg-light small rounded-3 px-3 py-2">🤩 Page d’accueil publique</span> -->
 
 					<!-- Title -->
 					<h1 class="mt-3 lh-base">Plateforme de l’État Civil
@@ -40,11 +78,11 @@
                         Grâce à ce service en ligne, chaque citoyen peut désormais faire une demande d’acte de naissance, de mariage ou de décès sans se déplacer.</p>
 
 					<!-- Search -->
-					{{-- <form class="col-md-10 bg-body position-relative p-2 mt-4 mt-md-5">
+					 <!-- <form class="col-md-10 bg-body position-relative p-2 mt-4 mt-md-5">
 						<div class="input-group">
 							<button type="button" class="btn btn-dark rounded-2 mb-0">Commence ton inscription</button>
 						</div>
-					</form> --}}
+					</form>  -->
 
 					<!-- Features -->
 					<div class="row mt-5">
@@ -82,8 +120,8 @@
 								</figure>
 
 								<div class="ms-3">
-									<h6 class="mb-1">Paiement sécurisé des frais de timbre</h6>
-									<p class="mb-0">Vous etes entre de bonne mains</p>
+									<!-- <h6 class="mb-1">Paiement sécurisé des frais de timbre</h6>
+									<p class="mb-0">Vous etes entre de bonne mains</p> -->
 								</div>
 							</div>
 						</div>
@@ -104,8 +142,41 @@
 					</svg>
 				</figure>
 
+					
+
 				<!-- Hero image -->
-				<img src="assets/images/bg/01.jpg" class="rounded" alt="hero-img">
+				 <!-- Carousel Bootstrap -->
+				<div id="myCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 600px; margin: auto;">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 2"></button>
+				</div>
+
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+					<img src="assets/images/bg/01.jpg" class="rounded" alt="hero-img">
+					</div>
+					<div class="carousel-item">
+					<img src="assets/images/bg/099.png" class="rounded" alt="hero-img">
+					</div>
+					<!-- <div class="carousel-item">
+					<img src="assets/images/bg/03.jpg" class="rounded" alt="hero-img">
+					</div> -->
+				</div>
+
+				<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Précédent</span>
+				</button>
+
+				<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Suivant</span>
+				</button>
+				</div>
+
+				
 
 			
 			</div>
@@ -122,57 +193,7 @@ Main Banner END -->
 
 <!-- =======================
 Client START -->
-<section class="pb-0">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-md-3 mb-2 mb-md-0">
-				<h5 class="pe-6">Système de paiement sont</h5>
-			</div>
 
-			<div class="col-md-9">
-				<!-- Slider START -->
-				<div class="swiper" data-swiper-options='{
-						"slidesPerView": 2, 
-						"spaceBetween": 50,
-						"breakpoints": { 
-							"576": {"slidesPerView": 3}, 
-							"992": {"slidesPerView": 4}, 
-							"1200": {"slidesPerView": 5}
-						}}'>
-
-					<!-- Slider items -->
-					<div class="swiper-wrapper align-items-center">
-						<!-- Image -->
-						<div class="swiper-slide">
-							<img src="assets/images/client/mtn.svg" class="grayscale" alt="client-img">
-						</div>
-						<!-- Image -->
-						<div class="swiper-slide">
-							<img src="assets/images/client/orange.svg" class="grayscale" alt="client-img">
-						</div>
-						<!-- Image -->
-						<div class="swiper-slide">
-							<img src="assets/images/client/wave.svg" class="grayscale" alt="client-img">
-						</div>
-						<!-- Image -->
-						<div class="swiper-slide">
-							<img src="assets/images/client/ecobank.png" class="grayscale" alt="client-img">
-						</div>
-						<!-- Image -->
-						<div class="swiper-slide">
-							<img src="assets/images/client/bicici.png" class="grayscale" alt="client-img">
-						</div>
-						<!-- Image -->
-						<div class="swiper-slide">
-							<img src="assets/images/client/image.png" class="grayscale" alt="client-img">
-						</div>
-					</div>
-				</div>
-				<!-- Slider END -->
-			</div>
-		</div> <!-- Row END -->
-	</div>
-</section>
 <!-- =======================
 Client END -->
 
@@ -209,7 +230,7 @@ About START -->
 
 					<div class="col-sm-6">
 						<!-- Skill set -->
-						<div class="row mb-4">
+						<!-- <div class="row mb-4">
 							<div class="col-sm-6 mb-4 mb-sm-0">
 								<div class="bg-dark text-white rounded text-center p-3">
 									<span class="h2 text-white">10+</span>
@@ -222,7 +243,7 @@ About START -->
 									<p class="mb-0 text-white">Happy customers</p>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						
 						<!-- About image -->
 						<img src="assets/images/about/01.jpg" class="rounded" alt="about-img-2">
@@ -233,7 +254,7 @@ About START -->
 
 			<!-- About content START -->
 			<div class="col-lg-5">
-				<span class="heading-color bg-light small rounded-3 px-3 py-2">🤝 Your gateway to digital success</span>
+				<!-- <span class="heading-color bg-light small rounded-3 px-3 py-2">🤝 Your gateway to digital success</span> -->
 				<h2 class="my-4">Un service public modernisé :</h2>
 				<p class="mb-4">Notre objectif est de rapprocher l’administration des citoyens et de moderniser les procédures pour un état civil fiable, centralisé et accessible en ligne.</p>
 				<!-- List -->
@@ -249,6 +270,63 @@ About START -->
 			</div>
 			<!-- About content END -->
 
+			<section class="pb-0">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-3 mb-2 mb-md-0">
+				<h5 class="pe-6">les Documents</h5>
+			</div>
+
+			<div class="col-md-9">
+				<!-- Slider START -->
+				<div class="swiper" data-swiper-options='{
+						"slidesPerView": 2, 
+						"spaceBetween": 50,
+						"breakpoints": { 
+							"576": {"slidesPerView": 3}, 
+							"992": {"slidesPerView": 4}, 
+							"1200": {"slidesPerView": 5}
+						}}'>
+
+								<!-- Slider items -->
+							<style>
+		.image-zoom {
+			transition: transform 0.3s ease;
+		}
+
+		.image-zoom:hover {
+			transform: scale(1.5); /* Zoom à 150% */
+		}
+		</style>
+
+		<div class="swiper-wrapper align-items-center">
+			<!-- Image -->
+
+			<div class="swiper-slide">
+				<img src="assets/images/client/acte deces.jpg" class="image-zoom" style="width: 300px; height: auto;" alt="client-img">
+			</div>
+			
+			<div class="swiper-slide">
+				<img src="assets/images/client/extrait.jpg" class="image-zoom" style="width: 300px; height: auto;" alt="client-img">
+			</div>
+
+			
+			<!-- Image -->
+			<div class="swiper-slide">
+				<img src="assets/images/client/mariage.jpg" class="image-zoom" style="width: 300px; height: auto;" alt="client-img">
+			</div>
+			<!-- Image -->
+		
+		</div>
+
+
+				</div>
+				<!-- Slider END -->
+			</div>
+		</div> <!-- Row END -->
+	</div>
+</section>
+
 		</div>
 	</div>
 </section>
@@ -261,7 +339,7 @@ Testimonials START -->
 		<div class="row">
 			<!-- Testimonials content -->
 			<div class="col-lg-6 mb-5 mb-lg-0">
-				<span class="heading-color bg-light small rounded-3 px-3 py-2">💖 De vrais résultats de vrais clients
+				<!-- <span class="heading-color bg-light small rounded-3 px-3 py-2">💖 De vrais résultats de vrais clients -->
                 </span>
 				<!-- Title -->
 				<h2 class="my-4">Découvrez comment nous avons aidé nos clients à réussir</h2>
@@ -300,9 +378,9 @@ Testimonials START -->
 									<!-- Avatar -->
 									<div class="d-flex align-items-center">
 										<div class="avatar avatar-sm flex-shrink-0 me-2">
-											<img class="avatar-img rounded" src="assets/images/avatar/03.jpg" alt="avatar">
+											<!-- <img class="avatar-img rounded" src="assets/images/avatar/03.jpg" alt="avatar"> -->
 										</div>
-										<p class="mb-0">Par Koffi yéboua simon</p>
+										<!-- <p class="mb-0">Par Koffi yéboua simon</p> -->
 									</div>
 								</div>
 							</div>
@@ -328,9 +406,9 @@ Testimonials START -->
 									<!-- Avatar -->
 									<div class="d-flex align-items-center">
 										<div class="avatar avatar-sm flex-shrink-0 me-2">
-											<img class="avatar-img rounded" src="assets/images/avatar/01.jpg" alt="avatar">
+											<!-- <img class="avatar-img rounded" src="assets/images/avatar/01.jpg" alt="avatar"> -->
 										</div>
-										<p class="mb-0">Par Koffi Beugre Diane</p>
+										<!-- <p class="mb-0">Par Koffi Beugre Diane</p> -->
 									</div>
 								</div>
 							</div>
@@ -356,9 +434,9 @@ Testimonials START -->
 									<!-- Avatar -->
 									<div class="d-flex align-items-center">
 										<div class="avatar avatar-sm flex-shrink-0 me-2">
-											<img class="avatar-img rounded" src="assets/images/avatar/02.jpg" alt="avatar">
+											<!-- <img class="avatar-img rounded" src="assets/images/avatar/02.jpg" alt="avatar"> -->
 										</div>
-										<p class="mb-0">Par koffi kouassi victorien </p>
+										<!-- <p class="mb-0">Par koffi kouassi victorien </p> -->
 									</div>
 								</div>
 							</div>
@@ -384,9 +462,9 @@ Testimonials START -->
 									<!-- Avatar -->
 									<div class="d-flex align-items-center">
 										<div class="avatar avatar-sm flex-shrink-0 me-2">
-											<img class="avatar-img rounded" src="assets/images/avatar/05.jpg" alt="avatar">
+											<!-- <img class="avatar-img rounded" src="assets/images/avatar/05.jpg" alt="avatar"> -->
 										</div>
-										<p class="mb-0">Par Koffi konan junior</p>
+										<!-- <p class="mb-0">Par Koffi konan junior</p> -->
 									</div>
 								</div>
 							</div>
@@ -416,7 +494,7 @@ Testimonials START -->
 					<div class="bg-dark rounded d-flex align-items-center px-3 py-2">
 						<!-- Avatar -->
 						<div class="avatar avatar-sm flex-shrink-0 me-2">
-							<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
+							<!-- <img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar"> -->
 						</div>
 						<p class="text-white small mb-0">La plateforme est claire et tout se fait en ligne 🔥</p>
 					</div>

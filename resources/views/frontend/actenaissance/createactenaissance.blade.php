@@ -106,7 +106,7 @@ Main hero START -->
                                 <h4 class="mb-3 mt-4">Informations de l'enfant</h4>
                                 <div class="row mb-3">
                                     <div class="col-md-4">
-                                        <label for="nom_enfant" class="form-label">Nom de l'enfant <<span style="color:red">*</span>/label>
+                                        <label for="nom_enfant" class="form-label">Nom de l'enfant <span style="color:red">*</span></label>
                                         <input type="text" class="form-control @error('nom_enfant') is-invalid @enderror" 
                                             id="nom_enfant" name="nom_enfant" value="{{ old('nom_enfant') }}" required>
                                         @error('nom_enfant')
