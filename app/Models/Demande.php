@@ -16,6 +16,7 @@ class Demande extends Model
         'numero_acte', 
         'date_acte',
         'nombre_copie',
+        'localite_id',
         'statut',
         'date_demande' // Assurez-vous que ce champ existe
     ];
@@ -23,6 +24,8 @@ class Demande extends Model
     protected $casts = [
         'date_acte' => 'date',
         'date_demande' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     public function user()
@@ -40,6 +43,11 @@ class Demande extends Model
         return $this->belongsTo(ActeMariage::class, 'acte_id');
     }
 
+    public function localite()
+    {
+        return $this->belongsTo(Localite::class);
+    }
+    
     public function acteDeces()
     {
         return $this->belongsTo(ActeDeces::class, 'acte_id');
