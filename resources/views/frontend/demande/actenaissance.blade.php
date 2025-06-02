@@ -7,7 +7,7 @@ Main hero START -->
 <section class="pt-8">
     <div class="container">
         <!-- Breadcrumb & title -->
-        <div class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5">
+       <div class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5 dark-overlay">
             <!-- Svg decoration -->
             <figure class="position-absolute top-0 start-0 ms-n8">
                 <svg width="424" height="405" viewBox="0 0 424 405" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +88,8 @@ Main hero START -->
                     <label for="nombre_copie" class="form-label">Nombre de copies <span style="color:red">*</span></label>
                     <select class="form-select @error('nombre_copie') is-invalid @enderror" 
                             id="nombre_copie" name="nombre_copie" required>
-                        @for($i = 1; $i <= 5; $i++)
+                        
+                            @for($i = 1; $i <= 5; $i++)
                             <option value="{{ $i }}" {{ old('nombre_copie') == $i ? 'selected' : '' }}>
                                 {{ $i }} copie{{ $i > 1 ? 's' : '' }}
                             </option>
@@ -151,4 +152,24 @@ document.addEventListener('DOMContentLoaded', function() {
 @endif
 <!-- =======================
 Main hero END -->
+
+<style>
+
+    .dark-overlay {
+  position: relative; /* nécessaire pour positionner l’overlay */
+  z-index: 0; /* bien en arrière */
+}
+
+.dark-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background-color: rgba(0, 0, 0, 0.5); /* noir à 50% d’opacité */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* ombre*/
+  z-index: -1; /* derrière le contenu */
+}
+
+</style>
+
+
 @endsection

@@ -5,7 +5,8 @@ Main hero START -->
 <section class="pt-8">
 	<div class="container">
 		<!-- Breadcrumb & title -->
-		<div class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5">
+		<div class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5 dark-overlay">
+
 
 			<!-- Svg decoration -->
 			<figure class="position-absolute top-0 start-0 ms-n8">
@@ -56,7 +57,7 @@ Main hero START -->
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="{{ route('createactenaissance.store') }}" id="acteNaissanceForm" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('createactenaissance.store') }}" id="acteNaissanceForm" enctype="multipart/form-data" class="form-bg">
                                 @csrf
 
                                 <!-- Informations sur le demandeur -->
@@ -506,4 +507,28 @@ Main hero END -->
 
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
+
+
+<style>
+.form-bg {
+  position: relative;
+  background-image: url('/images/bg-form.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.6); /* bordure blanche semi-transparente */
+  color: #fff; /* texte clair */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* ombre*/
+  z-index: 0;
+  overflow: hidden;
+
+
+}
+
+</style>
+
+
+
 @stop
