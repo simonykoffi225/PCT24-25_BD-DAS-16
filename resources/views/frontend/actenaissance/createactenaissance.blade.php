@@ -512,17 +512,17 @@ Main hero END -->
 <style>
 .form-bg {
   position: relative;
-  background-image: url('/images/bg-form.jpg'); 
+  background-image: url('src="assets/images/image1.png" alt=""'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 2rem 3rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.6); /* bordure blanche semi-transparente */
+  border: 2px solid rgb(243, 158, 0);
   color: #fff; /* texte clair */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* ombre*/
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ombre*/
   z-index: 0;
-  overflow: hidden;
+  overflow: hidden ;
 
 
 }

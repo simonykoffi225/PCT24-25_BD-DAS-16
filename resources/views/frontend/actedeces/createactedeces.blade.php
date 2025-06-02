@@ -56,7 +56,7 @@ Main hero START -->
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="{{ route('createactedeces.store') }}" id="acteDecesForm" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('createactedeces.store') }}" id="acteDecesForm" enctype="multipart/form-data" class="form-bg">
                                 @csrf
 
                                 <!-- Informations sur le déclarant -->
@@ -483,4 +483,25 @@ Main hero END -->
 
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
+
+
+<style>
+.form-bg {
+  position: relative;
+  /* background-image: url('src="assets/images/image1.png" alt=""');  */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  border: 2px solid rgb(243, 158, 0); 
+  color: #fff; /* texte clair */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* ombre*/
+  z-index: 0;
+  overflow: hidden;
+
+
+}
+
+</style>
 @stop
