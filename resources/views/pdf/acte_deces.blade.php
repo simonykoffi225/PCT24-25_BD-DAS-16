@@ -3,153 +3,235 @@
 <head>
     <title>Acte de Décès - {{ $acte->numero_acte }}</title>
     <style>
-        body { 
-            font-family: "Times New Roman", serif;
-            line-height: 1.5;
+        @page {
+            margin: 1.5cm;
         }
-        .header { 
-            text-align: center; 
+        body {
+            font-family: "Times New Roman", serif;
+            line-height: 1.6;
+            color: #000;
+            font-size: 14px;
+        }
+        .header {
+            text-align: center;
             margin-bottom: 25px;
             border-bottom: 2px solid #000;
             padding-bottom: 15px;
         }
-        .content { 
-            margin: 0 auto; 
-            width: 80%;
+        .header h1 {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
         }
-        .footer { 
-            text-align: center; 
-            margin-top: 40px; 
-            font-size: 0.9em;
-            border-top: 1px solid #000;
-            padding-top: 15px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0 25px 0;
-        }
-        th, td {
-            padding: 8px 12px;
-            border: 1px solid #000;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background-color: #f0f0f0;
-            width: 35%;
-            font-weight: normal;
-        }
-        h3 {
-            font-size: 1.1em;
-            margin: 25px 0 10px 0;
+        .header h2 {
+            font-size: 16px;
             text-decoration: underline;
+            margin: 10px 0;
+        }
+        .header .subtitle {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .two-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .column {
+            width: 48%;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 25px 0 15px 0;
+            font-size: 15px;
+        }
+        .info-block {
+            margin-bottom: 12px;
+            display: flex;
+        }
+        .info-label {
+            width: 180px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .info-value {
+            flex-grow: 1;
+            border-bottom: 1px dotted #000;
+            padding-bottom: 2px;
         }
         .official-stamp {
             float: right;
             margin: 20px;
             text-align: center;
             font-style: italic;
+            border: 1px dashed #000;
+            padding: 10px;
+            width: 150px;
         }
-        body { font-family: Arial, sans-serif; }
-        .header { text-align: center; margin-bottom: 20px; }
-        .content { margin: 0 auto; width: 90%; }
-        .footer { text-align: center; margin-top: 50px; font-size: 0.8em; }
-        table { width: 100%; border-collapse: collapse; }
-        td { padding: 8px; border: 1px solid #ddd; }
-        .signature-container { margin-top: 50px; text-align: right; }
+        .signature-container {
+            margin-top: 80px;
+            text-align: right;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 250px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 1px solid #000;
+            padding-top: 15px;
+        }
+        .watermark {
+            position: fixed;
+            opacity: 0.1;
+            font-size: 80px;
+            width: 100%;
+            text-align: center;
+            top: 40%;
+            left: 0;
+            transform: rotate(-45deg);
+            z-index: -1;
+        }
+        .mention-important {
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #000;
+        }
         .signature-img { max-width: 150px; max-height: 80px; }
     </style>
 </head>
 <body>
+    <!-- Filigrane -->
+    <div class="watermark">RÉPUBLIQUE DE CÔTE D'IVOIRE</div>
+
     <div class="header">
-        <h2>RÉPUBLIQUE DU BÉNIN</h2>
-        <h3>MINISTÈRE DE L'INTÉRIEUR ET DE LA SÉCURITÉ PUBLIQUE</h3>
+        <h1>RÉPUBLIQUE DE CÔTE D'IVOIRE</h1>
         <h2>ACTE DE DÉCÈS N° {{ $acte->numero_acte }}</h2>
+        <p class="subtitle">Union - Discipline - Travail</p>
     </div>
     
     <div class="content">
-        <h3>I. INFORMATIONS SUR LE DÉFUNT</h3>
-        <table>
-            <tr>
-                <th>Nom et prénoms</th>
-                <td><strong>{{ strtoupper($acte->nom_defunt) }} {{ ucwords($acte->prenom_defunt) }}</strong></td>
-            </tr>
-            <tr>
-                <th>Date de décès</th>
-                <td>{{ $acte->date_deces ? \Carbon\Carbon::parse($acte->date_deces)->locale('fr')->isoFormat('LL') : 'Non spécifiée' }}</td>
-            </tr>
-            <tr>
-                <th>Lieu de décès</th>
-                <td>{{ $acte->lieu_deces ?? 'Non spécifié' }}</td>
-            </tr>
-            <tr>
-                <th>Cause du décès</th>
-                <td>{{ $acte->cause_deces ?? 'Non spécifiée' }}</td>
-            </tr>
-        </table>
+        <div class="mention-important">
+            EXTRACT DES REGISTRES DE L'ÉTAT CIVIL
+        </div>
         
-        <h3>II. INFORMATIONS SUR LE DÉCLARANT</h3>
-        <table>
-            <tr>
-                <th>Nom et prénoms</th>
-                <td>{{ ucwords($acte->nom_declarant) }} {{ ucwords($acte->prenom_declarant) }}</td>
-            </tr>
-            <tr>
-                <th>Lien avec le défunt</th>
-                <td>{{ ucfirst($acte->filiation) }}</td>
-            </tr>
-            <tr>
-                <th>Date de déclaration</th>
-                <td>{{ $acte->date_acte ? \Carbon\Carbon::parse($acte->date_acte)->locale('fr')->isoFormat('LL') : '' }}</td>
-            </tr>
-        </table>
+        <div class="section">
+            <div class="section-title">I. INFORMATIONS SUR LE DÉFUNT</div>
+            
+            <div class="info-block">
+                <div class="info-label">Nom et prénoms :</div>
+                <div class="info-value"><strong>{{ strtoupper($acte->nom_defunt) }} {{ $acte->prenom_defunt }}</strong></div>
+            </div>
+            
+            <div class="info-block">
+                <div class="info-label">Date de naissance :</div>
+                <div class="info-value">{{ $acte->date_naissance ? \Carbon\Carbon::parse($acte->date_naissance)->locale('fr')->isoFormat('LL') : 'Non renseignée' }}</div>
+            </div>
+            
+            <div class="info-block">
+                <div class="info-label">Lieu de naissance :</div>
+                <div class="info-value">{{ $acte->lieu_naissance ?? 'Non renseigné' }}</div>
+            </div>
+            
+            
+            <div class="info-block">
+                <div class="info-label">Date du décès :</div>
+                <div class="info-value">{{ $acte->date_deces ? \Carbon\Carbon::parse($acte->date_deces)->locale('fr')->isoFormat('LL') : 'Non renseignée' }}</div>
+            </div>
+            
+            <div class="info-block">
+                <div class="info-label">Lieu du décès :</div>
+                <div class="info-value">{{ $acte->lieu_deces ?? 'Non renseigné' }}</div>
+            </div>
+            
+            <div class="info-block">
+                <div class="info-label">Cause du décès :</div>
+                <div class="info-value">{{ $acte->cause_deces ?? 'Non renseignée' }}</div>
+            </div>
+        </div>
         
-        <h3>III. INFORMATIONS SUR LES PARENTS</h3>
-        <table>
-            <tr>
-                <th>Nom du père</th>
-                <td>{{ $acte->nom_pere ? ucwords($acte->nom_pere) : 'Non renseigné' }}</td>
-            </tr>
-            <tr>
-                <th>Nom de la mère</th>
-                <td>{{ $acte->nom_mere ? ucwords($acte->nom_mere) : 'Non renseigné' }}</td>
-            </tr>
-        </table>
-        
-        <h3>IV. MENTIONS OFFICIELLES</h3>
-        <table>
-            <tr>
-                <th>Date d'établissement</th>
-                <td>{{ \Carbon\Carbon::parse($acte->created_at)->locale('fr')->isoFormat('LL') }}</td>
-            </tr>
-            <tr>
-                <th>Lieu d'établissement</th>
-                <td>{{ $acte->localite->nom ?? 'Non spécifié' }}</td>
-            </tr>
-            <tr>
-                <th>Officier d'état civil</th>
-                <td>
-                    <div class="official-stamp">
-                        <p>Le Responsable de l'État Civil</p>
-                        <p>Cachet et signature</p>
+        <div class="two-columns">
+            <div class="column">
+                <div class="section">
+                    <div class="section-title">II. FILIATION</div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Type de parent :</div>
+                        <div class="info-value">{{ $acte->type_parent ?? 'Non renseigné' }}</div>
                     </div>
-                </td>
-            </tr>
-        </table>
-         <div class="signature-container">
+                    
+                    <div class="info-block">
+                        <div class="info-label">Nom du parent :</div>
+                        <div class="info-value">{{ $acte->nom_parent ?? 'Non renseigné' }} {{ $acte->prenom_parent ?? 'Non renseignée' }}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="section">
+                    <div class="section-title">III. INFORMATIONS SUR LE DÉCLARANT</div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Nom et prénoms :</div>
+                        <div class="info-value">{{ $acte->nom_declarant }} {{ $acte->prenom_declarant }}</div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Lien avec le défunt :</div>
+                        <div class="info-value">{{ $acte->filiation ?? 'Non renseigné' }}</div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Date déclaration :</div>
+                        <div class="info-value">{{ $acte->date_acte ? \Carbon\Carbon::parse($acte->date_acte)->locale('fr')->isoFormat('LL') : now()->locale('fr')->isoFormat('LL') }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">IV. MENTIONS OFFICIELLES</div>
+            
+            <div class="info-block">
+                <div class="info-label">Mairie d'enregistrement :</div>
+                <div class="info-value">{{ $acte->localite->nom ?? 'Non renseignée' }}</div>
+            </div>
+            
+            <div class="info-block">
+                <div class="info-label">Date d'enregistrement :</div>
+                <div class="info-value">{{ \Carbon\Carbon::parse($acte->created_at)->locale('fr')->isoFormat('LL') }}</div>
+            </div>
+        </div>
+
+        <div class="signature-container">
             @if($validateur && $validateur->signature)
                 <div>
-                    <p>Validé par: {{ $validateur->name }}</p>
-                    <p>Le: {{ $acte->updated_at->format('d/m/Y') }}</p>
+                    <p>L'Officier de l'État Civil,</p>
+                    <p>{{ strtoupper($validateur->name) }}</p>
                     <img src="{{ storage_path('app/public/' . $validateur->signature) }}" class="signature-img">
+                    <p>Le {{ $acte->updated_at->format('d/m/Y') }}</p>
                 </div>
             @endif
         </div>
-        <div class="footer">
-            <p>Document généré électroniquement le {{ now()->locale('fr')->isoFormat('LLLL') }}</p>
-            <p>Copie certifiée conforme à l'original déposé au registre</p>
-        </div>
+        
+        {{-- <div class="footer">
+            <p><strong>Document délivré le :</strong> {{ now()->locale('fr')->isoFormat('LLLL') }}</p>
+            <p><em>Copie certifiée conforme à l'original déposé au registre de l'état civil</em></p>
+            <p><strong>Référence :</strong> {{ $reference }}</p>
+        </div> --}}
     </div>
 </body>
 </html>

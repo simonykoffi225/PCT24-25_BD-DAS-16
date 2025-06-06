@@ -116,7 +116,7 @@ class ActeDecesController extends Controller
             $acte->update(['documents' => json_encode($paths)]);
         }
 
-        return redirect()->route('listeactedeces')
+        return redirect()->route('mesnouvelledemande')
                          ->with('success', 'Acte de décès enregistré avec succès!');
     }
 

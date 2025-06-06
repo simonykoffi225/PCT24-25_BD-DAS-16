@@ -176,10 +176,13 @@
                             <a href="{{ route('actenaissance.show', $acte->id) }}" class="btn btn-sm btn-primary" title="Voir">
                                 <i class="fas fa-eye"></i>
                             </a>
+                            @auth
+								@if(auth()->user()->isAdmin() || auth()->user()->isOfficier())
                             <a href="{{ route('actenaissance.edit', $acte->id) }}" class="btn btn-sm btn-info" title="Modifier">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            @auth
+                                @endif
+
 								@if(auth()->user()->isAdmin())
                             <form action="{{ route('actenaissance.destroy', $acte->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet acte?')">
                                 @csrf

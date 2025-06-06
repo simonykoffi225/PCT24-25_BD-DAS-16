@@ -78,19 +78,20 @@ class ActeNaissanceController extends Controller
         'heure_naissance' => 'nullable|date_format:H:i',
         'type_localite' => 'required|exists:type_localite,id',
         'localite_id' => 'required|exists:localite,id',
-        'nom_pere' => 'nullable|string|max:100',
-        'prenom_pere' => 'nullable|string|max:100',
-        'domicile_pere' => 'nullable|string|max:255',
-        'profession_pere' => 'nullable|string|max:100',
-        'numero_cni_pere' => 'nullable|string|max:50',
+        'nom_pere' => 'required|string|max:100',
+        'prenom_pere' => 'required|string|max:100',
+        'domicile_pere' => 'required|string|max:255',
+        'profession_pere' => 'required|string|max:100',
+        'numero_cni_pere' => 'required|string|max:50',
         'nom_mere' => 'required|string|max:100',
         'prenom_mere' => 'required|string|max:100',
-        'domicile_mere' => 'nullable|string|max:255',
-        'profession_mere' => 'nullable|string|max:100',
-        'numero_cni_mere' => 'nullable|string|max:50',
-        'documents.*' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:2048',
-        
-
+        'domicile_mere' => 'required|string|max:255',
+        'profession_mere' => 'required|string|max:100',
+        'numero_cni_mere' => 'required|string|max:50',
+        'documents.*' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:2048',  
+    ],[
+        'documents.*.max' => 'Le fichier :attribute ne doit pas dépasser :max kilo-octets.',
+        'documents.*.mimes' => 'Le fichier :attribute doit être de type: :values.',
     ]);
 
 
@@ -142,7 +143,7 @@ class ActeNaissanceController extends Controller
 // dd($acte);
     $acte->save();
 
-    return redirect()->route('listeactenaissance')
+    return redirect()->route('mesnouvelledemande')
         // ->with('success', 'Acte de naissance enregistré avec succès!');
    ->with('success', 'Acte de naissance enregistré avec succès!');
 //   return redirect()->route('home')->with('success', 'Acte de naissance enregistré avec succès!');

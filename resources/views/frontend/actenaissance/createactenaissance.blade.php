@@ -225,7 +225,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="nom_pere" class="form-label">Nom</label>
                                             <input type="text" class="form-control @error('nom_pere') is-invalid @enderror" 
-                                                id="nom_pere" name="nom_pere" value="{{ old('nom_pere') }}">
+                                                id="nom_pere" name="nom_pere" value="{{ old('nom_pere') }}" required>
                                             @error('nom_pere')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -235,7 +235,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="prenom_pere" class="form-label">Prénom</label>
                                             <input type="text" class="form-control @error('prenom_pere') is-invalid @enderror" 
-                                                id="prenom_pere" name="prenom_pere" value="{{ old('prenom_pere') }}">
+                                                id="prenom_pere" name="prenom_pere" value="{{ old('prenom_pere') }}" required>
                                             @error('prenom_pere')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -245,7 +245,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="domicile_pere" class="form-label">Domicile</label>
                                             <input type="text" class="form-control @error('domicile_pere') is-invalid @enderror" 
-                                                id="domicile_pere" name="domicile_pere" value="{{ old('domicile_pere') }}">
+                                                id="domicile_pere" name="domicile_pere" value="{{ old('domicile_pere') }}" required>
                                             @error('domicile_pere')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -255,7 +255,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="profession_pere" class="form-label">Profession</label>
                                             <input type="text" class="form-control @error('profession_pere') is-invalid @enderror" 
-                                                id="profession_pere" name="profession_pere" value="{{ old('profession_pere') }}">
+                                                id="profession_pere" name="profession_pere" value="{{ old('profession_pere') }}" required>
                                             @error('profession_pere')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -265,7 +265,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="numero_cni_pere" class="form-label">Numéro CNI du père</label>
                                             <input type="text" class="form-control @error('numero_cni_pere') is-invalid @enderror" 
-                                                id="numero_cni_pere" name="numero_cni_pere" value="{{ old('numero_cni_pere') }}">
+                                                id="numero_cni_pere" name="numero_cni_pere" value="{{ old('numero_cni_pere') }}" required>
                                             @error('numero_cni_pere')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -299,7 +299,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="domicile_mere" class="form-label">Domicile</label>
                                             <input type="text" class="form-control @error('domicile_mere') is-invalid @enderror" 
-                                                id="domicile_mere" name="domicile_mere" value="{{ old('domicile_mere') }}">
+                                                id="domicile_mere" name="domicile_mere" value="{{ old('domicile_mere') }}" required>
                                             @error('domicile_mere')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -309,7 +309,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="profession_mere" class="form-label">Profession</label>
                                             <input type="text" class="form-control @error('profession_mere') is-invalid @enderror" 
-                                                id="profession_mere" name="profession_mere" value="{{ old('profession_mere') }}">
+                                                id="profession_mere" name="profession_mere" value="{{ old('profession_mere') }}" required>
                                             @error('profession_mere')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -319,7 +319,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="numero_cni_mere" class="form-label">Numéro CNI de la mère</label>
                                             <input type="text" class="form-control @error('numero_cni_mere') is-invalid @enderror" 
-                                                id="numero_cni_mere" name="numero_cni_mere" value="{{ old('numero_cni_mere') }}">
+                                                id="numero_cni_mere" name="numero_cni_mere" value="{{ old('numero_cni_mere') }}" required>
                                             @error('numero_cni_mere')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -330,20 +330,46 @@ Main hero START -->
                                 </div>
 
                                 <!-- Documents -->
+                                <!-- Documents -->
                                 <h4 class="mb-3 mt-4">Documents justificatifs</h4>
                                 <div class="row mb-3">
                                     <div class="col-md-12">
                                         <label for="documents" class="form-label">Documents *</label>
-                                        <input type="file" class="form-control @error('documents') is-invalid @enderror" 
+                                        <input type="file" class="form-control @error('documents.*') is-invalid @enderror" 
                                             id="documents" name="documents[]" multiple required>
-                                        @error('documents')
-                                            <span class="invalid-feedback" role="alert">
+                                        
+                                        @error('documents.*')
+                                            <span class="invalid-feedback" role="alert" style="display: block;">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
+                                        
+                                        @if($errors->has('documents'))
+                                            @foreach($errors->get('documents') as $error)
+                                                <span class="invalid-feedback" role="alert" style="display: block;">
+                                                    <strong>{{ $error }}</strong>
+                                                </span>
+                                            @endforeach
+                                        @endif
+                                        
                                         <small class="text-muted">Vous pouvez uploader plusieurs fichiers (PDF, JPG, PNG - max 2MB chacun)</small>
                                     </div>
                                 </div>
+
+                                <script>
+                                    document.getElementById('documents').addEventListener('change', function(e) {
+                                        const files = e.target.files;
+                                        const maxSize = 2 * 1024 * 1024; // 2MB en bytes
+                                        
+                                        for (let i = 0; i < files.length; i++) {
+                                            if (files[i].size > maxSize) {
+                                                alert(`Le fichier "${files[i].name}" dépasse la taille maximale autorisée de 2MB.`);
+                                                e.target.value = ''; // Effacer la sélection
+                                                return;
+                                            }
+                                        }
+                                    });
+                                </script>
 
                                 <div class="row mb-0">
                                     <div class="col-md-6 offset-md-4">

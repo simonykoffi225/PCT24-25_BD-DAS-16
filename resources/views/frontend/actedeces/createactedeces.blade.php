@@ -128,7 +128,7 @@ Main hero START -->
                                     <div class="col-md-4">
                                         <label for="date_naissance" class="form-label">Date de naissance</label>
                                         <input type="date" class="form-control @error('date_naissance') is-invalid @enderror" 
-                                            id="date_naissance" name="date_naissance" value="{{ old('date_naissance') }}">
+                                            id="date_naissance" name="date_naissance" value="{{ old('date_naissance') }}" required>
                                         @error('date_naissance')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -142,7 +142,7 @@ Main hero START -->
                                     <div class="col-md-6">
                                         <label for="lieu_naissance" class="form-label">Lieu de naissance</label>
                                         <input type="text" class="form-control @error('lieu_naissance') is-invalid @enderror" 
-                                            id="lieu_naissance" name="lieu_naissance" value="{{ old('lieu_naissance') }}">
+                                            id="lieu_naissance" name="lieu_naissance" value="{{ old('lieu_naissance') }}" required>
                                         @error('lieu_naissance')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -236,7 +236,7 @@ Main hero START -->
                                      <div class="col-md-6">
                                             <label for="cause_deces" class="form-label">Cause du décès</label>
                                             <textarea class="form-control @error('cause_deces') is-invalid @enderror" 
-                                                    id="cause_deces" name="cause_deces">{{ old('cause_deces') }}</textarea>
+                                                    id="cause_deces" name="cause_deces" required>{{ old('cause_deces') }}</textarea>
                                             @error('cause_deces')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -252,7 +252,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="type_parent" class="form-label">Type de parenté</label>
                                             <select class="form-select @error('type_parent') is-invalid @enderror" 
-                                                id="type_parent" name="type_parent">
+                                                id="type_parent" name="type_parent" required>
                                                 <option value="" {{ old('type_parent') == '' ? 'selected' : '' }}>Sélectionner un type</option>
                                                 <option value="père" {{ old('type_parent') == 'père' ? 'selected' : '' }}>Père</option>
                                                 <option value="mère" {{ old('type_parent') == 'mère' ? 'selected' : '' }}>Mère</option>
@@ -266,7 +266,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="nom_parent" class="form-label">Nom du parent</label>
                                             <input type="text" class="form-control @error('nom_parent') is-invalid @enderror" 
-                                                id="nom_parent" name="nom_parent" value="{{ old('nom_parent') }}">
+                                                id="nom_parent" name="nom_parent" value="{{ old('nom_parent') }}" required>
                                             @error('nom_parent')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -278,7 +278,7 @@ Main hero START -->
                                         <div class="mb-3">
                                             <label for="prenom_parent" class="form-label">Prénom du parent</label>
                                             <input type="text" class="form-control @error('prenom_parent') is-invalid @enderror" 
-                                                id="prenom_parent" name="prenom_parent" value="{{ old('prenom_parent') }}">
+                                                id="prenom_parent" name="prenom_parent" value="{{ old('prenom_parent') }}" required>
                                             @error('prenom_parent')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -294,7 +294,7 @@ Main hero START -->
                                     <div class="col-md-12">
                                         <label for="documents" class="form-label">Documents justificatifs</label>
                                         <input type="file" class="form-control @error('documents') is-invalid @enderror" 
-                                            id="documents" name="documents[]" multiple>
+                                            id="documents" name="documents[]" required multiple>
                                         @error('documents')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

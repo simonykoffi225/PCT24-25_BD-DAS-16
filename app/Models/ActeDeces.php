@@ -36,12 +36,21 @@ class ActeDeces extends Model
     ];
 
     // Définition des dates pour Laravel
-    protected $dates = [
-        'date_deces',
-        'date_acte',
-        'date_naissance',
-        'created_at',
-        'updated_at'
+    // protected $dates = [
+    //     'date_deces',
+    //     'date_acte',
+    //     'date_naissance',
+    //     'created_at',
+    //     'updated_at'
+    // ];
+
+    protected $casts = [
+        'date_deces' => 'datetime',
+        'date_acte' => 'datetime',
+        'date_naissance' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        
     ];
 
     // Accesseur sécurisé pour date_deces

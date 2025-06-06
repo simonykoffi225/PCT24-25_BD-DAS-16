@@ -3,186 +3,272 @@
 <head>
     <title>Acte de Mariage - {{ $acte->numero_acte }}</title>
     <style>
-        body { 
-            font-family: "Times New Roman", serif;
-            line-height: 1.5;
+        @page {
+            margin: 0;
         }
-        .header { 
-            text-align: center; 
+        body {
+            font-family: "Times New Roman", serif;
+            margin: 2cm;
+            line-height: 1.5;
+            color: #000;
+        }
+        .header {
+            text-align: center;
             margin-bottom: 25px;
             border-bottom: 2px solid #000;
             padding-bottom: 15px;
         }
-        .content { 
-            margin: 0 auto; 
-            width: 80%;
+        .header h1 {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
         }
-        .footer { 
-            text-align: center; 
-            margin-top: 40px; 
-            font-size: 0.9em;
-            border-top: 1px solid #000;
-            padding-top: 15px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0 25px 0;
-        }
-        th, td {
-            padding: 8px 12px;
-            border: 1px solid #000;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background-color: #f0f0f0;
-            width: 35%;
-            font-weight: normal;
-        }
-        h3 {
-            font-size: 1.1em;
-            margin: 25px 0 10px 0;
+        .header h2 {
+            font-size: 16px;
             text-decoration: underline;
+            margin: 10px 0;
+        }
+        .header .subtitle {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .content {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .two-columns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .column {
+            width: 48%;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 25px 0 15px 0;
+            font-size: 15px;
+        }
+        .info-block {
+            margin-bottom: 12px;
+            display: flex;
+        }
+        .info-label {
+            width: 150px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .info-value {
+            flex-grow: 1;
         }
         .official-stamp {
             float: right;
             margin: 20px;
             text-align: center;
             font-style: italic;
+            border: 1px dashed #000;
+            padding: 10px;
+            width: 150px;
         }
-        body { font-family: Arial, sans-serif; }
-        .header { text-align: center; margin-bottom: 20px; }
-        .content { margin: 0 auto; width: 90%; }
-        .footer { text-align: center; margin-top: 50px; font-size: 0.8em; }
-        table { width: 100%; border-collapse: collapse; }
-        td { padding: 8px; border: 1px solid #ddd; }
-        .signature-container { margin-top: 50px; text-align: right; }
-        .signature-img { max-width: 150px; max-height: 80px; }
+        .signature-container {
+            margin-top: 80px;
+            text-align: right;
+        }
+        .signature-img {
+            height: 60px;
+            border-bottom: 1px solid #000;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 1px solid #000;
+            padding-top: 15px;
+        }
+        .watermark {
+            position: fixed;
+            opacity: 0.1;
+            font-size: 80px;
+            width: 100%;
+            text-align: center;
+            top: 40%;
+            left: 0;
+            transform: rotate(-45deg);
+            z-index: -1;
+        }
+        .divider {
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        .witness-columns {
+            display: flex;
+            justify-content: space-between;
+        }
+        .witness-column {
+            width: 48%;
+        }
     </style>
 </head>
 <body>
+    <!-- Filigrane -->
+    <div class="watermark">RÉPUBLIQUE DE CÔTE D'IVOIRE</div>
+
     <div class="header">
-        <h2>RÉPUBLIQUE DU BÉNIN</h2>
-        <h3>MINISTÈRE DE L'INTÉRIEUR ET DE LA SÉCURITÉ PUBLIQUE</h3>
-        <h2>ACTE DE MARIAGE N° {{ $acte->numero_acte }}</h2>
+        <h1>RÉPUBLIQUE DE CÔTE D'IVOIRE</h1>
+        <h2>EXTRACT D'ACTE DE MARIAGE N° {{ $acte->numero_acte }}</h2>
+        <p class="subtitle">Union - Discipline - Travail</p>
     </div>
     
     <div class="content">
-        <h3>I. INFORMATIONS SUR LES ÉPOUX</h3>
-        <table>
-            <tr>
-                <th>Nom et prénoms de l'époux</th>
-                <td><strong>{{ strtoupper($acte->nom_epoux) }} {{ ucwords($acte->prenom_epoux) }}</strong></td>
-            </tr>
-            <tr>
-                <th>Date de naissance</th>
-                <td>{{ $acte->date_naissance_epoux ? \Carbon\Carbon::parse($acte->date_naissance_epoux)->locale('fr')->isoFormat('LL') : 'Non spécifiée' }}</td>
-            </tr>
-            <tr>
-                <th>Lieu de naissance</th>
-                <td>{{ $acte->lieu_naissance_epoux ?? 'Non spécifié' }}</td>
-            </tr>
-            <tr>
-                <th>Profession</th>
-                <td>{{ $acte->profession_epoux ?? 'Non spécifiée' }}</td>
-            </tr>
-            <tr>
-                <th>Domicile</th>
-                <td>{{ $acte->domicile_epoux ?? 'Non spécifié' }}</td>
-            </tr>
-        </table>
-        
-        <table>
-            <tr>
-                <th>Nom et prénoms de l'épouse</th>
-                <td><strong>{{ strtoupper($acte->nom_epouse) }} {{ ucwords($acte->prenom_epouse) }}</strong></td>
-            </tr>
-            <tr>
-                <th>Date de naissance</th>
-                <td>{{ $acte->date_naissance_epouse ? \Carbon\Carbon::parse($acte->date_naissance_epouse)->locale('fr')->isoFormat('LL') : 'Non spécifiée' }}</td>
-            </tr>
-            <tr>
-                <th>Lieu de naissance</th>
-                <td>{{ $acte->lieu_naissance_epouse ?? 'Non spécifié' }}</td>
-            </tr>
-            <tr>
-                <th>Profession</th>
-                <td>{{ $acte->profession_epouse ?? 'Non spécifiée' }}</td>
-            </tr>
-            <tr>
-                <th>Domicile</th>
-                <td>{{ $acte->domicile_epouse ?? 'Non spécifié' }}</td>
-            </tr>
-        </table>
-        
-        <h3>II. INFORMATIONS SUR LE MARIAGE</h3>
-        <table>
-            <tr>
-                <th>Date du mariage</th>
-                <td>{{ $acte->date_mariage ? \Carbon\Carbon::parse($acte->date_mariage)->locale('fr')->isoFormat('LL') : 'Non spécifiée' }}</td>
-            </tr>
-            <tr>
-                <th>Lieu du mariage</th>
-                <td>{{ $acte->lieu_mariage ?? 'Non spécifié' }}</td>
-            </tr>
-            <tr>
-                <th>Date d'enregistrement</th>
-                <td>{{ $acte->date_acte ? \Carbon\Carbon::parse($acte->date_acte)->locale('fr')->isoFormat('LL') : 'Non spécifiée' }}</td>
-            </tr>
-            <tr>
-                <th>Localité d'enregistrement</th>
-                <td>{{ $acte->localite->nom ?? 'Non spécifié' }}</td>
-            </tr>
-        </table>
-        
-        <h3>III. INFORMATIONS SUR LES TÉMOINS</h3>
-        <table>
-            <tr>
-                <th>Témoin 1</th>
-                <td>
-                    {{ ucwords($acte->nom_temoin1) }} {{ ucwords($acte->prenom_temoin1) }}<br>
-                    CNI: {{ $acte->numero_cni_temoin1 ?? 'Non spécifié' }}
-                </td>
-            </tr>
-            <tr>
-                <th>Témoin 2</th>
-                <td>
-                    {{ ucwords($acte->nom_temoin2) }} {{ ucwords($acte->prenom_temoin2) }}<br>
-                    CNI: {{ $acte->numero_cni_temoin2 ?? 'Non spécifié' }}
-                </td>
-            </tr>
-        </table>
-        
-        <h3>IV. MENTIONS OFFICIELLES</h3>
-        <table>
-            <tr>
-                <th>Date d'établissement</th>
-                <td>{{ \Carbon\Carbon::parse($acte->created_at)->locale('fr')->isoFormat('LL') }}</td>
-            </tr>
-            <tr>
-                <th>Officier d'état civil</th>
-                <td>
-                    <div class="official-stamp">
-                        <p>Le Responsable de l'État Civil</p>
-                        <p>Cachet et signature</p>
+        <div class="two-columns">
+            <div class="column">
+                <div class="section">
+                    <div class="section-title">I. INFORMATIONS SUR L'ÉPOUX</div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Nom complet :</div>
+                        <div class="info-value"><strong>{{ strtoupper($acte->nom_epoux) }} {{ $acte->prenom_epoux }}</strong></div>
                     </div>
-                </td>
-            </tr>
-        </table>
-         <div class="signature-container">
+                    
+                    <div class="info-block">
+                        <div class="info-label">Naissance :</div>
+                        <div class="info-value">
+                            {{ $acte->date_naissance_epoux ? \Carbon\Carbon::parse($acte->date_naissance_epoux)->locale('fr')->isoFormat('LL') : 'Non renseignée' }}<br>
+                            à {{ $acte->lieu_naissance_epoux ?? 'Non renseigné' }}
+                        </div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Profession :</div>
+                        <div class="info-value">{{ $acte->profession_epoux ?? 'Non renseignée' }}</div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Domicile :</div>
+                        <div class="info-value">{{ $acte->domicile_epoux ?? 'Non renseigné' }}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="section">
+                    <div class="section-title">I. INFORMATIONS SUR L'ÉPOUSE</div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Nom complet :</div>
+                        <div class="info-value"><strong>{{ strtoupper($acte->nom_epouse) }} {{ $acte->prenom_epouse }}</strong></div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Naissance :</div>
+                        <div class="info-value">
+                            {{ $acte->date_naissance_epouse ? \Carbon\Carbon::parse($acte->date_naissance_epouse)->locale('fr')->isoFormat('LL') : 'Non renseignée' }}<br>
+                            à {{ $acte->lieu_naissance_epouse ?? 'Non renseigné' }}
+                        </div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Profession :</div>
+                        <div class="info-value">{{ $acte->profession_epouse ?? 'Non renseignée' }}</div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Domicile :</div>
+                        <div class="info-value">{{ $acte->domicile_epouse ?? 'Non renseigné' }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="two-columns">
+            <div class="column">
+                <div class="section">
+                    <div class="section-title">II. INFORMATIONS SUR LE MARIAGE</div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Date :</div>
+                        <div class="info-value">{{ $acte->date_mariage ? \Carbon\Carbon::parse($acte->date_mariage)->locale('fr')->isoFormat('LL') : 'Non renseignée' }}</div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Lieu :</div>
+                        <div class="info-value">{{ $acte->lieu_mariage ?? 'Non renseigné' }}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="section">
+                    <div class="section-title">III. RÉGIME MATRIMONIAL</div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Régime :</div>
+                        <div class="info-value">{{ $acte->regime_matrimonial ?? 'Communauté réduite aux acquêts' }}</div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Contrat :</div>
+                        <div class="info-value">{{ $acte->contrat_mariage ? 'Oui' : 'Non' }}</div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Mairie :</div>
+                        <div class="info-value">{{ $acte->localite->nom ?? 'Non renseignée' }}</div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <div class="info-label">Enregistrement :</div>
+                        <div class="info-value">{{ $acte->date_acte ? \Carbon\Carbon::parse($acte->date_acte)->locale('fr')->isoFormat('LL') : now()->locale('fr')->isoFormat('LL') }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">IV. INFORMATIONS SUR LES TÉMOINS</div>
+            
+            <div class="witness-columns">
+                <div class="witness-column">
+                    <div class="info-block">
+                        <div class="info-label">Témoin 1 :</div>
+                        <div class="info-value">
+                            <strong>{{ strtoupper($acte->nom_temoin1) }} {{ $acte->prenom_temoin1 }}</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="witness-column">
+                    <div class="info-block">
+                        <div class="info-label">Témoin 2 :</div>
+                        <div class="info-value">
+                            <strong>{{ strtoupper($acte->nom_temoin2) }} {{ $acte->prenom_temoin2 }}</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signature-container">
             @if($validateur && $validateur->signature)
                 <div>
-                    <p>Validé par: {{ $validateur->name }}</p>
-                    <p>Le: {{ $acte->updated_at->format('d/m/Y') }}</p>
+                    <p>L'Officier de l'État Civil, {{ strtoupper($validateur->name) }}</p>
                     <img src="{{ storage_path('app/public/' . $validateur->signature) }}" class="signature-img">
+                    <p>Le {{ $acte->updated_at->format('d/m/Y') }}</p>
                 </div>
             @endif
         </div>
-        <div class="footer">
-            <p>Document généré électroniquement le {{ now()->locale('fr')->isoFormat('LLLL') }}</p>
-            <p>Copie certifiée conforme à l'original déposé au registre</p>
-        </div>
+        
+        {{-- <div class="footer">
+            <p><strong>Document délivré le :</strong> {{ now()->locale('fr')->isoFormat('LLLL') }}</p>
+            <p><em>Copie certifiée conforme à l'original déposé au registre de l'état civil</em></p>
+            <p><strong>Référence :</strong> {{ $reference }}</p>
+        </div> --}}
     </div>
 </body>
 </html>

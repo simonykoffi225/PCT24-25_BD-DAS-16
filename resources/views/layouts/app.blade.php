@@ -409,45 +409,29 @@ Footer START -->
 					<div class="col-6 col-md-4">
 						<h6 class="mb-2 mb-md-4">Etat Civil</h6>
 						<ul class="nav flex-column">
-							<li class="nav-item"><a class="nav-link pt-0" href="">A propos de nous</a></li>
-							<li class="nav-item"><a class="nav-link" href="l">Contact</a></li>
-							<li class="nav-item"><a class="nav-link" href="">Career <span class="badge text-bg-danger ms-2">2 Job</span></a></li>
-							<li class="nav-item"><a class="nav-link" href="l">Career detail</a></li>
-							<li class="nav-item"><a class="nav-link" href="">Become a partner</a></li>
-							<li class="nav-item"><a class="nav-link" href="">Sign in</a></li>
-							<li class="nav-item"><a class="nav-link" href="">Sign up</a></li>
+							<li class="nav-item"><a class="nav-link pt-0" href="">Demande Acte Naissance</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Demande Acte Mariage</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Demande Acte Décès</a></li>
+							<li class="nav-item"><a class="nav-link" href="">A propos de nous</a></li>
 						</ul>
 					</div>
 
 					<!-- Link block -->
 					<div class="col-6 col-md-4">
-						<h6 class="mb-2 mb-md-4">Community</h6>
+						<h6 class="mb-2 mb-md-4">A savoir</h6>
 						<ul class="nav flex-column">
-							<li class="nav-item"><a class="nav-link pt-0" href="#">Documents</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Supports <i class="bi bi-box-arrow-up-right small ms-1"></i></a></li>
-							<li class="nav-item"><a class="nav-link" href="faq.html">Faqs</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Privacy Policy</a></li>
-							<li class="nav-item"><a class="nav-link" href="blog-grid.html">News and blogs</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Terms & condition</a></li>
+							<li class="nav-item"><a class="nav-link pt-0" href="">Acte Naissance</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Acte Mariage</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Ac te Décès</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Contact <i class="bi bi-box-arrow-up-right small ms-1"></i></a></li>
 						</ul>
 					</div>
 
 					<!-- Link block -->
 					<div class="col-md-4">
-						<h6 class="mb-2 mb-md-4">App available on</h6>
-						<div class="row g-2 mt-2 mb-4 mb-sm-5">
-							<!-- Google play store button -->
-							<div class="col-5 col-sm-4 col-md-6">
-								<a href="#"> <img src="assets/images/elements/google-play.svg" alt=""> </a>
-							</div>
-							<!-- App store button -->
-							<div class="col-5 col-sm-4 col-md-6">
-								<a href="#"> <img src="assets/images/elements/app-store.svg" alt="app-store"> </a>
-							</div>
-						</div>
 
 						<!-- Social buttons -->
-						<h6 class="mb-2 mb-md-4">Follow on</h6>
+						<h6 class="mb-2 mb-md-4">Nos réseaux</h6>
 
 						<ul class="list-inline mb-0 mt-3">
 							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>

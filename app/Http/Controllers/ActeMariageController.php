@@ -171,7 +171,7 @@ class ActeMariageController extends Controller
             'user_id' => auth()->id(),
         ]);
 
-        return redirect()->route('listeactemariage')
+        return redirect()->route('mesnouvelledemande')
                          ->with('success', 'Acte de mariage enregistré avec succès!');
     }
 

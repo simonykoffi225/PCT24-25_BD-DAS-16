@@ -386,11 +386,11 @@ Footer START -->
 			<div class="col-lg-3">
 				<!-- logo -->
 				<a class="me-0" href="index.html">
-					<img class="light-mode-item h-40px" src="assets/images/logo.svg" alt="logo">
-					<img class="dark-mode-item h-40px" src="assets/images/logo-light.svg" alt="logo">
+					<img class="light-mode-item h-40px" src="../assets/images/image.png" alt="logo">
+					<img class="dark-mode-item navbar-brand-item bg-white" src="../assets/images/image.png" alt="logo">
 				</a>
 
-				<p class="mt-4 mb-2">A Bootstrap theme that's both stylish and functional, perfect for any type of technology or corporate website.</p>
+				<p class="mt-4 mb-2">La plateforme numérique officielle de gestion de l’état civil. Grâce à ce service en ligne, chaque citoyen peut désormais faire une demande d’acte de naissance, de mariage ou de décès sans se déplacer</p>
 			</div>
 			<!-- Widget 1 END -->
 
@@ -399,47 +399,31 @@ Footer START -->
 				<div class="row g-4">
 					<!-- Link block -->
 					<div class="col-6 col-md-4">
-						<h6 class="mb-2 mb-md-4">Quick links</h6>
+						<h6 class="mb-2 mb-md-4">Etat Civil</h6>
 						<ul class="nav flex-column">
-							<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">About us</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact-v1.html">Contact us</a></li>
-							<li class="nav-item"><a class="nav-link" href="career.html">Career <span class="badge text-bg-danger ms-2">2 Job</span></a></li>
-							<li class="nav-item"><a class="nav-link" href="career-single.html">Career detail</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact-v1.html">Become a partner</a></li>
-							<li class="nav-item"><a class="nav-link" href="sign-in.html">Sign in</a></li>
-							<li class="nav-item"><a class="nav-link" href="sign-up.html">Sign up</a></li>
+							<li class="nav-item"><a class="nav-link pt-0" href="">Demande Acte Naissance</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Demande Acte Mariage</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Demande Acte Décès</a></li>
+							<li class="nav-item"><a class="nav-link" href="">A propos de nous</a></li>
 						</ul>
 					</div>
 
 					<!-- Link block -->
 					<div class="col-6 col-md-4">
-						<h6 class="mb-2 mb-md-4">Community</h6>
+						<h6 class="mb-2 mb-md-4">A savoir</h6>
 						<ul class="nav flex-column">
-							<li class="nav-item"><a class="nav-link pt-0" href="#">Documents</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Supports <i class="bi bi-box-arrow-up-right small ms-1"></i></a></li>
-							<li class="nav-item"><a class="nav-link" href="faq.html">Faqs</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Privacy Policy</a></li>
-							<li class="nav-item"><a class="nav-link" href="blog-grid.html">News and blogs</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Terms & condition</a></li>
+							<li class="nav-item"><a class="nav-link pt-0" href="">Acte Naissance</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Acte Mariage</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Ac te Décès</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Contact <i class="bi bi-box-arrow-up-right small ms-1"></i></a></li>
 						</ul>
 					</div>
 
 					<!-- Link block -->
 					<div class="col-md-4">
-						<h6 class="mb-2 mb-md-4">App available on</h6>
-						<div class="row g-2 mt-2 mb-4 mb-sm-5">
-							<!-- Google play store button -->
-							<div class="col-5 col-sm-4 col-md-6">
-								<a href="#"> <img src="assets/images/elements/google-play.svg" alt=""> </a>
-							</div>
-							<!-- App store button -->
-							<div class="col-5 col-sm-4 col-md-6">
-								<a href="#"> <img src="assets/images/elements/app-store.svg" alt="app-store"> </a>
-							</div>
-						</div>
 
 						<!-- Social buttons -->
-						<h6 class="mb-2 mb-md-4">Follow on</h6>
+						<h6 class="mb-2 mb-md-4">Nos réseaux</h6>
 
 						<ul class="list-inline mb-0 mt-3">
 							<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-facebook-f lh-base"></i></a> </li>
@@ -460,19 +444,8 @@ Footer START -->
 		<!-- Bottom footer -->
 		<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
 			<!-- copyright text -->
-			<div class="text-body"> Copyrights ©2024 Mizzle. Build by <a href="https://www.webestica.com/" class="text-body text-primary-hover">Webestica</a>. </div>
+			<div class="text-body"> Copyrights ©2025 UVCI <a href="" class="text-body text-primary-hover"></a>. </div>
 			<!-- copyright links-->
-			<!-- Language selector -->
-			<div class="dropdown dropup text-center text-md-end mt-3 mt-md-0">
-				<a class="dropdown-toggle btn btn-sm btn-light mb-0" href="#" role="button" id="languageSwitcher" data-bs-toggle="dropdown" aria-expanded="false">
-					<i class="fas fa-globe me-2"></i>Language
-				</a>
-				<ul class="dropdown-menu min-w-auto" aria-labelledby="languageSwitcher">
-					<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="assets/images/flags/uk.svg" alt="">English</a></li>
-					<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="assets/images/flags/gr.svg" alt="">German </a></li>
-					<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="assets/images/flags/sp.svg" alt="">French</a></li>
-				</ul>
-			</div>
 		</div>
 	</div>
 </footer>
