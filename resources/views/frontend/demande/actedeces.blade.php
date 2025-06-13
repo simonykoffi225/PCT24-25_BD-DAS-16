@@ -230,5 +230,9 @@ form.row.g-3 .form-select:focus {
   border-color:rgb(11, 189, 49, 0.5);
   box-shadow: 0 0 8px rgba(11, 189, 49, 0.5);
 }
+
+
+
 </style>
+
 @endsection
