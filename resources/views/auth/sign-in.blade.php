@@ -5,7 +5,7 @@
 <!-- Mirrored from mizzle.webestica.com/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Apr 2025 16:04:55 GMT -->
 <head>
 
-	<title>Mizzle - Technology and Corporate Bootstrap Theme</title>
+	<title>Etat civil en côte d'ivoire</title>
 
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
@@ -94,92 +94,90 @@
 <body>
 
 <!-- **************** MAIN CONTENT START **************** -->
-<main>
-		<div class="row g-0">
+<main style="background-color: ''; height: 100vh;">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <!-- Conteneur centré -->
+        <div class="d-flex flex-row" style="width: 100vw; height: 100vh; background-color: white ;">
 
-			<!-- Right -->
-			<div class="col-sm-10 col-lg-5 d-flex m-auto vh-100">
-				<div class="row w-100 m-auto">
-					<div class="col-sm-10 my-5 m-auto">
-			
-						<a href="{{ route('home') }}"><img src="assets/images/image.png" class="h-50px mb-4" alt="logo"></a>
-			
-						<h2 class="mb-0">Bienvenue</h2>
-						<p class="mb-0">Veuillez entrer vos identifiants pour vous connecter</p>
-						
+            <!-- Image à gauche avec bordure -->
+            <div class="w-50 border border-primary">
+                <img src="assets/images/about/02.jpg"
+                     alt="Illustration"
+                     class="w-100 h-100"
+                     style="object-fit: cover;">
+            </div>
 
-						
-						@if(session('success'))
-							<div class="alert alert-success alert-dismissible fade show" role="alert">
-								{{ session('success') }}
-								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-							</div>
-						@endif
-						
-						@if(session('error'))
-							<div class="alert alert-danger alert-dismissible fade show" role="alert">
-								{{ session('error') }}
-								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-							</div>
-						@endif
-					
-						<!-- Form START -->
-						<form method="POST" action="{{ route('login.authenticate') }}">
-							@csrf
-							<!-- Email -->
+            <!-- Formulaire à droite avec bordure -->
+            <div class="w-50 d-flex justify-content-center align-items-center border border-primary border-start-0">
+                <div style="width: 100%; max-width: 500px; padding: 3rem;">
 
-							@if (Session::get('withErrors'))
-							<b>{{Session::get('withErrors')}}</b>
-							@endif
-							<div class="input-floating-label form-floating mb-4">
-								<input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="nom@exemple.com" value="{{ old('email') }}" required>
-								<label for="email">Adresse email</label>
-								@error('email')
-									<div class="invalid-feedback">{{ $message }}</div>
-								@enderror
-							</div>
-			
-							<!-- Password -->
-							<div class="input-floating-label form-floating mb-4 position-relative">
-								<input type="password" class="form-control fakepassword pe-6 @error('password') is-invalid @enderror" id="password" name="password" placeholder="Entrez votre mot de passe" required>
-								<label for="password">Mot de passe</label>
-								<span class="position-absolute top-50 end-0 translate-middle-y p-0 me-2">
-									<i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
-								</span>
-								@error('password')
-									<div class="invalid-feedback">{{ $message }}</div>
-								@enderror
-							</div>
-			
-							<!-- Check box -->
-							<div class="mb-4 d-flex justify-content-between">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-									<label class="form-check-label" for="remember">
-										Se souvenir de moi
-									</label>
-								</div>
-								<a href="{{ route('password.request') }}" class="link-underline-primary">Mot de passe oublié?</a>
-							</div>
-			
-							<!-- Button -->
-							<div class="align-items-center mt-0">
-								<div class="d-grid">
-									<button class="btn btn-dark mb-0" type="submit">Se connecter</button>
-								</div>
-							</div>
-						</form>
-						<!-- Form END -->
-			
-						<!-- Sign up link -->
-						<div class="mt-4 text-center">
-							<span>Pas encore inscrit ? <a href="{{ route('register') }}">Créer un compte</a></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                    <a href="{{ route('home') }}">
+                        <img src="assets/images/image.png" class="mb-3" style="height: 40px;" alt="logo">
+                    </a>
+
+                    <h2 class="mb-1">Bienvenue</h2>
+                    <p class="mb-3">Veuillez entrer vos identifiants pour vous connecter</p>
+
+                    <!-- Alertes -->
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    @endif
+
+                    @if(session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    @endif
+
+                    <!-- Formulaire -->
+                    <form method="POST" action="{{ route('login.authenticate') }}">
+                        @csrf
+
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email" name="email"
+                                   placeholder="nom@exemple.com" required>
+                            <label for="email">Adresse email</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="password" name="password"
+                                   placeholder="Mot de passe" required>
+                            <label for="password">Mot de passe</label>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                                <label class="form-check-label" for="remember">Se souvenir de moi</label>
+                            </div>
+                            <a href="{{ route('password.request') }}">Mot de passe oublié ?</a>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-dark">Se connecter</button>
+                        </div>
+                    </form>
+
+                    <div class="mt-3 text-center">
+                        <span>Pas encore inscrit ? <a href="{{ route('register') }}">Créer un compte</a></span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 </main>
+
+
+
+
+
+
 <!-- **************** MAIN CONTENT END **************** -->
 
 <!-- Back to top -->

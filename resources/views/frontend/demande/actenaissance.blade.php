@@ -4,41 +4,40 @@
 @section('content')
 <!-- =======================
 Main hero START -->
+
+
 <section class="pt-8">
-    <div class="container">
-        <!-- Breadcrumb & title -->
-       <div class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5 dark-overlay">
-            <!-- Svg decoration -->
-            <figure class="position-absolute top-0 start-0 ms-n8">
-                <svg width="424" height="405" viewBox="0 0 424 405" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- SVG content -->
-                </svg>
-            </figure>
+	<div class="container">
+		<!-- Breadcrumb & title -->
+       <div style="background-color:#d2b535;" class="rounded-4 text-center position-relative overflow-hidden py-3 dark-overlay">
 
-            <!-- SVG decoration -->
-            <figure class="position-absolute top-0 end-0 me-n8 mt-5">
-                <svg class="opacity-3" width="371" height="354" viewBox="0 0 371 354" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- SVG content -->
-                </svg>
-            </figure>
+  <!-- contenu inchangé -->
+  <!-- Svg decoration -->
+  <figure class="position-absolute top-0 start-0 ms-n8">
+    <!-- SVG ... -->
+  </figure>
 
-            <!-- Breadcrumb -->
-            <div class="d-flex justify-content-center position-relative z-index-9">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb breadcrumb-dots breadcrumb-dark mb-1">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Demande d'Acte de Naissance</li>
-                    </ol>
-                </nav>
-            </div>
-            <!-- Title -->
-            <h1 class="h2 text-white">Acte de Naissance</h1>
-        </div>
+  <figure class="position-absolute top-0 end-0 me-n8 mt-5">
+    <!-- SVG ... -->
+  </figure>
 
+  <div class="d-flex justify-content-center position-relative z-index-9">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-dots breadcrumb-dark mb-1">
+       <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Demande d'Acte de Naissance</li>
+      </ol>
+    </nav>
+  </div>
+
+  <h1 class="h2 text-white">demande d’un acte de naissance.</h1>
+</div>
+<!-- <section class="pt-8">
+   
         <!-- Formulaire d'Acte de Naissance -->
         <div class="container mt-6">
             
-            <h2 class="text-center mb-4">Formulaire de Demande d'Acte de Naissance</h2>
+            <!-- <h2 class="text-center mb-4">Formulaire de Demande d'Acte de Naissance</h2> -->
 
             @if(session('success'))
                 <div class="alert alert-success alert-dismissible fade show">
@@ -58,7 +57,7 @@ Main hero START -->
                 </div>
             @endif
 
-            <form action="{{ route('demandes.acte-naissance.store') }}" method="POST" class="row g-3">
+            <form action="{{ route('demandes.acte-naissance.store') }}" method="POST" class="row g-3" class="form-bg">
                 @csrf
 
                 <!-- Numéro d'acte -->
@@ -155,20 +154,30 @@ Main hero END -->
 
 <style>
 
-    .dark-overlay {
-  position: relative; /* nécessaire pour positionner l’overlay */
-  z-index: 0; /* bien en arrière */
+form.row.g-3 {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+    border-radius: 15px;
+  border: 2px solid rgb(243, 158, 0);
+  color: #fff; /* texte clair */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ombre*/
+  background-color: #fff;
 }
 
-.dark-overlay::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0 */
-  background-color: rgba(0, 0, 0, 0.5); /* noir à 50% d’opacité */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* ombre*/
-  z-index: -1; /* derrière le contenu */
+form.row.g-3 .form-control,
+form.row.g-3 .form-select {
+  border-radius: 10px !important;
+  box-shadow: none;
+  border: 1.5px solid #ccc;
+  transition: border-color 0.3s ease;
 }
 
+form.row.g-3 .form-control:focus,
+form.row.g-3 .form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
 </style>
 
 

@@ -16,15 +16,15 @@
 
 					<!-- Quote and location -->
 					<div class="mt-auto">
-						<ul class="list-inline mb-3">
+						<!-- <ul class="list-inline mb-3">
 							<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
 							<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
 							<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
 							<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
 							<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i></li>
-						</ul>
-						<q class="h6 fw-semibold mb-0">Using the Mizzle theme has been a seamless journey from beginning to end!</q>
-						<p class="mb-0 mt-3 text-body-secondary"><span class="heading-color fw-normal">Dennis Barrett</span> CEO of company</p>
+						</ul> -->
+						<!-- <q class="h6 fw-semibold mb-0">Using the Mizzle theme has been a seamless journey from beginning to end!</q>
+						<p class="mb-0 mt-3 text-body-secondary"><span class="heading-color fw-normal">Dennis Barrett</span> CEO of company</p> -->
 
 						<!-- Location -->
 						<div class="row row-cols-sm-2 mt-3">
@@ -32,24 +32,24 @@
 								<hr class="mb-4">
 								<!-- Icon -->
 								<figure class="text-primary mb-2">
-									<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<!-- <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M2.47802 7.91504C2.25 8.79835 2.25 9.94603 2.25 11.9996C2.25 14.3272 2.25 15.491 2.582 16.4252C3.16141 18.0555 4.44414 19.3382 6.07444 19.9176C7.0086 20.2496 8.1724 20.2496 10.5 20.2496H13.5C15.8276 20.2496 16.9914 20.2496 17.9256 19.9176C19.5559 19.3382 20.8386 18.0555 21.418 16.4252C21.75 15.491 21.75 14.3272 21.75 11.9996C21.75 9.94605 21.75 8.79838 21.522 7.91506L17.754 10.6916C16.6402 11.5123 15.7625 12.1591 15.002 12.6175C14.2228 13.087 13.5145 13.3922 12.7288 13.4926C12.2452 13.5543 11.7557 13.5543 11.2721 13.4926C10.4864 13.3923 9.77801 13.0871 8.99883 12.6176C8.23833 12.1593 7.36057 11.5125 6.24672 10.6918L2.47802 7.91504Z" fill="currentColor" fill-opacity="0.25"/>
 										<path d="M3.09186 6.50448L7.10646 9.46247C8.25692 10.3101 9.07916 10.915 9.77305 11.3332C10.4551 11.7442 10.9602 11.941 11.4621 12.005C11.8195 12.0507 12.1813 12.0507 12.5387 12.005C13.0406 11.9409 13.5457 11.7441 14.2277 11.3331C14.9216 10.9149 15.7438 10.31 16.8942 9.46225L20.9082 6.50449C20.2273 5.38896 19.1792 4.52754 17.9256 4.082C16.9914 3.75 15.8276 3.75 13.5 3.75L10.5 3.75C8.17241 3.75 7.00861 3.75 6.07445 4.082C4.82082 4.52754 3.7727 5.38895 3.09186 6.50448Z" fill="currentColor"/>
-									</svg>
+									</svg> -->
 								</figure>
-								<p class="heading-color mb-0">1421 Coburn Hollow Road Metamora, IL 61548.</p>
+								<!-- <p class="heading-color mb-0">1421 Coburn Hollow Road Metamora, IL 61548.</p> -->
 							</div>
 
 							<div class="cols">
 								<hr class="mb-4">
 								<!-- Icon -->
 								<figure class="text-primary mb-2">
-									<svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<!-- <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M13.5573 21.3204C14.2451 20.8085 15.174 20.072 16.1369 19.1733C18.0303 17.4062 20.1864 14.8931 20.7356 12.1471C21.8463 6.59263 17.3472 2.25 12.0001 2.25C6.65311 2.25 2.15361 6.5926 3.26469 12.1471C3.81397 14.8931 5.97011 17.4062 7.86344 19.1733C8.8263 20.072 9.75517 20.8085 10.443 21.3204C10.4887 21.3544 10.3745 21.2694 10.3908 21.2812C11.275 21.9193 12.7253 21.9193 13.6095 21.2812C13.6258 21.2694 13.5116 21.3544 13.5573 21.3204Z" fill="currentColor" fill-opacity="0.25"/>
 										<path d="M15.5 11.1504C15.5 13.0834 13.933 14.6504 12 14.6504C10.067 14.6504 8.5 13.0834 8.5 11.1504C8.5 9.21739 10.067 7.65039 12 7.65039C13.933 7.65039 15.5 9.21739 15.5 11.1504Z" fill="currentColor"/>
-									</svg>
+									</svg> -->
 								</figure>
-								<a href="#" class="heading-color text-primary-hover text-decoration-underline mb-0">example@gmail.com</a>
+								<!-- <a href="#" class="heading-color text-primary-hover text-decoration-underline mb-0">example@gmail.com</a> -->
 							</div>
 						</div>
 					</div>
@@ -75,14 +75,14 @@
 								</svg>
 							</figure>
 
-							<img src="assets/images/about/17.jpg" class="rounded-4" alt="">
+							<img src="assets/images/about/accueil.png" class="rounded-4" alt="">
 						</div>
 
 					</div>
 					<div class="col-6 position-relative">
 						<!-- Video image -->
 						<div class="card card-body overflow-hidden p-0 mb-4 mb-sm-7">
-							<img src="assets/images/about/18.jpg" class="card-img" alt="video-img">
+							<img src="assets/images/about/02.jpg" class="card-img" alt="video-img">
 							<div class="bg-overlay bg-dark opacity-3"></div>
 							<div class="card-img-overlay d-flex p-3">
 								<!-- Video button and link -->
@@ -151,7 +151,7 @@ About content START -->
 								<h4 class="purecounter text-white mb-0" data-purecounter-start="0" data-purecounter-end="600"	data-purecounter-delay="300">0</h4>
 								<span class="h4 text-primary mb-0">+</span>
 							</div>
-							<p class="text-center text-white mb-0">Happy Customers</p>
+							<!-- <p class="text-center text-white mb-0">Happy Customers</p> -->
 						</div>
 	
 						<!-- Counter item -->
@@ -161,7 +161,7 @@ About content START -->
 									<h4 class="purecounter mb-0" data-purecounter-start="0" data-purecounter-end="25"	data-purecounter-delay="300">0</h4>
 									<span class="h4 text-primary mb-0">+</span>
 								</div>
-								<p class="text-center heading-color mb-0">Completed Projects</p>
+								<!-- <p class="text-center heading-color mb-0">Completed Projects</p> -->
 							</div>
 						</div>
 	
@@ -172,14 +172,14 @@ About content START -->
 									<h4 class="purecounter mb-0" data-purecounter-start="0" data-purecounter-end="200"	data-purecounter-delay="300">0</h4>
 									<span class="h4 text-primary mb-0">+</span>
 								</div>
-								<p class="text-center heading-color mb-0">Acquired Users</p>
+								<!-- <p class="text-center heading-color mb-0">Acquired Users</p> -->
 							</div>
 						</div>
 					</div>
 	
 					<div class="col-lg-6 ms-auto mb-6 mb-lg-0 order-lg-2">
 						<h3 class="mb-4">Nos Solutions :</h3>
-						{{-- <p class="mb-5">At mizzle, our vision is to pioneer a new era of software solutions. We believe in empowering innovation, enabling businesses to shape their digital futures, and creating a world where software knows no bounds.</p> --}}
+						<!-- {{-- <p class="mb-5">At mizzle, our vision is to pioneer a new era of software solutions. We believe in empowering innovation, enabling businesses to shape their digital futures, and creating a world where software knows no bounds.</p> --}} -->
 	
 						<!-- Features item -->
 						<div class="d-sm-flex mb-4">
@@ -245,7 +245,7 @@ Steps of installation -->
 			<div class="col-lg-6 mb-5 mb-lg-0">
 				<!-- Title -->
 				<h2 class="mb-3 mb-lg-5">Pourquoi Nous Choisir ?</h2>
-				<p class="mb-3 mb-lg-5">Downloading mizzle is a quick and easy process. Follow these simple steps to start enjoying the benefits of our powerful software.</p>
+				<!-- <p class="mb-3 mb-lg-5">Downloading mizzle is a quick and easy process. Follow these simple steps to start enjoying the benefits of our powerful software.</p> -->
 
 				<!-- Steps -->
 				<div class="d-flex align-items-center gap-3 mb-3">
@@ -270,7 +270,7 @@ Steps of installation -->
 			<div class="col-lg-5 position-relative ms-auto">
 				<!-- Year -->
 				<div class="position-absolute top-50 start-0 translate-middle ms-n2">
-					<h2 class="heading-color opacity-1 display-4 text-uppercase rotate-270">since 2018</h2>
+					<!-- <h2 class="heading-color opacity-1 display-4 text-uppercase rotate-270">since 2018</h2> -->
 				</div>
 				<!-- Image -->
 				<img src="assets/images/about/14.jpg" class="rounded-3 position-relative" alt="">

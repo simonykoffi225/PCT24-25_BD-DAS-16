@@ -10,7 +10,7 @@
 			<div style="width: 400px; overflow: hidden;">
 				<marquee behavior="scroll" direction="left" scrollamount="4">
 					<span style="color: white; font-size: 16px;">
-						<i>Le Directeur de l'état civil vous souhaite une très belle fête à tous !</i>
+						<i>Le Président de l'uvci, souhaite bonne chance à tout les groupes de PCT !</i>
 					</span>
 				</marquee>
 			</div>
@@ -160,9 +160,9 @@
 					<div class="carousel-item">
 					<img src="assets/images/bg/099.png" class="rounded" alt="hero-img">
 					</div>
-					<!-- <div class="carousel-item">
-					<img src="assets/images/bg/03.jpg" class="rounded" alt="hero-img">
-					</div> -->
+					<div class="carousel-item">
+					<img src="assets/images/bg/Certificat de décès.png" class="rounded" alt="hero-img">
+					</div>
 				</div>
 
 				<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -274,7 +274,7 @@ About START -->
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-md-3 mb-2 mb-md-0">
-				<h5 class="pe-6">les Documents</h5>
+				<h5 class="pe-6">Les documents</h5>
 			</div>
 
 			<div class="col-md-9">
@@ -480,7 +480,7 @@ Testimonials START -->
 			<!-- Testimonials image -->
 			<div class="col-sm-10 col-lg-6 col-xl-5 position-relative ms-xl-auto">
 				<!-- Image -->
-				<img src="assets/images/about/03.jpg" class="rounded" alt="testimonial-img">
+				<img src="assets/images/about/accueil.png" class="rounded" alt="testimonial-img">
 
 				<!-- SVG decoration -->
 				<figure class="position-absolute top-50 start-0 translate-middle ms-n5 d-none d-xl-block">
@@ -491,23 +491,23 @@ Testimonials START -->
 
 				<!-- Message decoration -->
 				<div class="col-11 col-sm-8 position-absolute top-0 start-0 mt-n2 mt-sm-7 ms-n2 ms-sm-n7">
-					<div class="bg-dark rounded d-flex align-items-center px-3 py-2">
+					<!-- <div class="bg-dark rounded d-flex align-items-center px-3 py-2">
 						<!-- Avatar -->
-						<div class="avatar avatar-sm flex-shrink-0 me-2">
+						<div class="avatar avatar-sm flex-shrink-0 me-2"> -->
 							<!-- <img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar"> -->
-						</div>
+						<!-- </div>
 						<p class="text-white small mb-0">La plateforme est claire et tout se fait en ligne 🔥</p>
-					</div>
-				</div>
+					</div> -->
+				<!-- </div> -->
 
 				<!-- Message decoration -->
 				<div class="bg-white rounded shadow d-flex align-items-center position-absolute bottom-0 start-0 mb-sm-5 ms-sm-n5 px-3 py-2">
 					<!-- Avatar -->
-					<div class="avatar avatar-sm flex-shrink-0 me-2">
-						<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
-					</div>
-					<p class="text-dark small mb-0">Je suis impressionnée 💗</p>
-				</div>
+					<!-- <div class="avatar avatar-sm flex-shrink-0 me-2">
+						<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar"> -->
+					<!-- </div>
+						<p class="text-white small mb-0">La plateforme est claire et tout se fait en ligne 🔥</p>
+					</div> -->
 			</div>
 		</div>
 	</div>

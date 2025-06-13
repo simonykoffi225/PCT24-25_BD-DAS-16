@@ -43,7 +43,7 @@ About START -->
 					</svg>
 				</figure>
 				<!-- Image -->
-				<img src="assets/images/about/14.jpg" class="rounded" alt="about-img">
+				<img src="assets/images/about/099.png" class="rounded" alt="about-img">
 			</div>
 			<!-- Content -->
 			<div class="col-lg-6 ps-md-5">

@@ -203,4 +203,32 @@ document.addEventListener('DOMContentLoaded', function() {
 @endif
 <!-- =======================
 Main hero END -->
+
+<style>
+
+form.row.g-3 {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+    border-radius: 15px;
+  border: 2px solid rgb(243, 158, 0);
+  color: #fff; /* texte clair */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ombre*/
+  background-color: #fff;
+}
+
+form.row.g-3 .form-control,
+form.row.g-3 .form-select {
+  border-radius: 10px !important;
+  box-shadow: none;
+  border: 1.5px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+form.row.g-3 .form-control:focus,
+form.row.g-3 .form-select:focus {
+  border-color:rgb(11, 189, 49, 0.5);
+  box-shadow: 0 0 8px rgba(11, 189, 49, 0.5);
+}
+</style>
 @endsection

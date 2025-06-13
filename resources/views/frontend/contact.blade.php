@@ -7,7 +7,7 @@ Main hero START -->
 		<div class="row g-4 g-xxl-5">
 			<div class="col-xl-9 mx-auto">
 				<!-- Image -->
-				<img src="assets/images/bg/02.jpg" class="rounded" alt="contact-bg">
+				<img src="assets/images/bg/contact.png" class="rounded" alt="contact-bg">
 
 				<!-- Contact form START -->
 				<div class="row mt-n5 mt-sm-n7 mt-md-n8">

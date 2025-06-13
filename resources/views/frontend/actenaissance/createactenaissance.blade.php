@@ -5,52 +5,30 @@ Main hero START -->
 <section class="pt-8">
 	<div class="container">
 		<!-- Breadcrumb & title -->
-		<div class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5 dark-overlay">
+       <div style="background-color:#d2b535;" class="rounded-4 text-center position-relative overflow-hidden py-3 dark-overlay">
 
+  <!-- contenu inchangé -->
+  <!-- Svg decoration -->
+  <figure class="position-absolute top-0 start-0 ms-n8">
+    <!-- SVG ... -->
+  </figure>
 
-			<!-- Svg decoration -->
-			<figure class="position-absolute top-0 start-0 ms-n8">
-				<svg width="424" height="405" viewBox="0 0 424 405" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<ellipse cx="212" cy="202.5" rx="212" ry="202.5" fill="url(#paint0_linear_153_3831)"/>
-					<defs>
-					<linearGradient id="paint0_linear_153_3831" x1="212" y1="0" x2="212" y2="405" gradientUnits="userSpaceOnUse">
-					<stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0"/>
-					<stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0.5"/>
-					</linearGradient>
-					</defs>
-				</svg>
-			</figure>
+  <figure class="position-absolute top-0 end-0 me-n8 mt-5">
+    <!-- SVG ... -->
+  </figure>
 
-			<!-- SVG decoration -->
-			<figure class="position-absolute top-0 end-0 me-n8 mt-5">
-				<svg class="opacity-3" width="371" height="354" viewBox="0 0 371 354" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<ellipse cx="172.5" cy="176.5" rx="131.5" ry="125.5" fill="url(#paint0_linear_195_2)"/>
-					<ellipse cx="185.5" cy="177" rx="185.5" ry="177" fill="url(#paint1_linear_195_2)"/>
-					<defs>
-					<linearGradient id="paint0_linear_195_2" x1="172.5" y1="51" x2="172.5" y2="302" gradientUnits="userSpaceOnUse">
-					<stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.5"/>
-					<stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0"/>
-					</linearGradient>
-					<linearGradient id="paint1_linear_195_2" x1="185.5" y1="0" x2="185.5" y2="354" gradientUnits="userSpaceOnUse">
-					<stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.2"/>
-					<stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0"/>
-					</linearGradient>
-					</defs>
-				</svg>
-			</figure>
+  <div class="d-flex justify-content-center position-relative z-index-9">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-dots breadcrumb-dark mb-1">
+        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Acte de naissance</li>
+      </ol>
+    </nav>
+  </div>
 
-			<!-- Breadcrumb -->
-			<div class="d-flex justify-content-center position-relative z-index-9">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb breadcrumb-dots breadcrumb-dark mb-1">
-						<li class="breadcrumb-item"><a href="#">Accueil</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Acte de naissance</li>
-					</ol>
-				</nav>
-			</div>
-			<!-- Title -->
-			<h1 class="h2 text-white">Nouvelle demande d’un acte de naissance.</h1>
-		</div>
+  <h1 class="h2 text-white">Nouvelle demande d’un acte de naissance.</h1>
+</div>
+
 
         <div class="container">
             <div class="row justify-content-center">
@@ -518,17 +496,38 @@ Main hero END -->
   background-repeat: no-repeat;
   padding: 2rem 3rem;
   border-radius: 15px;
-  border: 2px solid rgb(243, 158, 0);
+  border: 2px solid rgb(210, 181, 53);
   color: #fff; /* texte clair */
   box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ombre*/
   z-index: 0;
   overflow: hidden ;
-
+  
 
 }
 
+.bg-dark h1 {
+  margin-bottom: 0.5rem; /* réduire l'espace sous le titre */
+}
+
+.breadcrumb {
+  margin-bottom: 0.5rem;
+}
+
+.custom-box {
+  background-color: #009345;
+  border-radius: 25px;
+  border: 3px solid #f3a800;
+}
+
+.custom-bg-warning {
+  background-color: #f3a800;
+  color: #212529; /* texte foncé par exemple */
+}
+
+
+
+
+
 </style>
-
-
 
 @stop

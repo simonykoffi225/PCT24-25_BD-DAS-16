@@ -5,40 +5,36 @@
 <!-- =======================
 Main hero START -->
 <section class="pt-8">
-    <div class="container">
-        <!-- Breadcrumb & title -->
-        <div class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5">
-            <!-- Svg decoration -->
-            <figure class="position-absolute top-0 start-0 ms-n8">
-                <svg width="424" height="405" viewBox="0 0 424 405" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- SVG content -->
-                </svg>
-            </figure>
+	<div class="container">
+		<!-- Breadcrumb & title -->
+       <div style="background-color:#d2b535;" class="rounded-4 text-center position-relative overflow-hidden py-3 dark-overlay">
 
-            <!-- SVG decoration -->
-            <figure class="position-absolute top-0 end-0 me-n8 mt-5">
-                <svg class="opacity-3" width="371" height="354" viewBox="0 0 371 354" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- SVG content -->
-                </svg>
-            </figure>
+  <!-- contenu inchangé -->
+  <!-- Svg decoration -->
+  <figure class="position-absolute top-0 start-0 ms-n8">
+    <!-- SVG ... -->
+  </figure>
 
-            <!-- Breadcrumb -->
-            <div class="d-flex justify-content-center position-relative z-index-9">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb breadcrumb-dots breadcrumb-dark mb-1">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Demande d'Acte de Mariage</li>
-                    </ol>
-                </nav>
-            </div>
-            <!-- Title -->
-            <h1 class="h2 text-white">Acte de Mariage</h1>
-        </div>
+  <figure class="position-absolute top-0 end-0 me-n8 mt-5">
+    <!-- SVG ... -->
+  </figure>
+
+  <div class="d-flex justify-content-center position-relative z-index-9">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-dots breadcrumb-dark mb-1">
+       <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Demande d'Acte de Mariage</li>
+      </ol>
+    </nav>
+  </div>
+
+  <h1 class="h2 text-white">demande d’un acte de Mariage.</h1>
+</div>
+
 
         <!-- Formulaire d'Acte de Mariage -->
         <div class="container mt-6">
-            
-            <h2 class="text-center mb-4">Formulaire de Demande d'Acte de Mariage</h2>
+        
 
             @if(session('success'))
                 <div class="alert alert-success alert-dismissible fade show">
@@ -162,4 +158,32 @@ document.addEventListener('DOMContentLoaded', function() {
 @endif
 <!-- =======================
 Main hero END -->
+
+<style>
+
+form.row.g-3 {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+    border-radius: 15px;
+  border: 2px solid rgb(243, 158, 0);
+  color: #fff; /* texte clair */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ombre*/
+  background-color: #fff;
+}
+
+form.row.g-3 .form-control,
+form.row.g-3 .form-select {
+  border-radius: 10px !important;
+  box-shadow: none;
+  border: 1.5px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+form.row.g-3 .form-control:focus,
+form.row.g-3 .form-select:focus {
+  border-color:rgb(11, 189, 49, 0.5);
+  box-shadow: 0 0 8px rgba(11, 189, 49, 0.5);
+}
+</style>
 @endsection
