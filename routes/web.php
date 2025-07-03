@@ -13,6 +13,9 @@ use App\Http\Controllers\ActeMariageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MesDemandesController;
 
+use App\Http\Controllers\DashboardController;
+
+
 // Routes principales
 Route::get('/', [App\Http\Controllers\FrontController::class, 'index'])->name('home');
 
@@ -127,4 +130,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/demande/paiement', [PaiementController::class, 'store'])->name('demandes.paiement.store');
 
     //  Route::get('/listeactemariage', [App\Http\Controllers\FrontController::class, 'listeactemariage'])->name('listeactemariage');
+
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 });

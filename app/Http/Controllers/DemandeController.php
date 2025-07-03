@@ -40,6 +40,7 @@ class DemandeController extends Controller
 
         $demande = Demande::create([
             'user_id' => Auth::id(),
+            'localite_id' => $acte->localite_id,
             'acte_id' => $acte->id,
             'type_acte' => 'naissance',
             'numero_acte' => $validated['numero_acte'],
@@ -114,6 +115,7 @@ class DemandeController extends Controller
 
     $demande = Demande::create([
         'user_id' => Auth::id(),
+        'localite_id' => $acte->localite_id,
         'acte_id' => $acte->id,
         'type_acte' => 'deces', // Changé de 'naissance' à 'deces'
         'numero_acte' => $validated['numero_acte'],
@@ -188,6 +190,7 @@ public function storeActeMariage(Request $request)
 
     $demande = Demande::create([
         'user_id' => Auth::id(),
+        'localite_id' => $acte->localite_id,
         'acte_id' => $acte->id,
         'type_acte' => 'mariage',
         'numero_acte' => $validated['numero_acte'],
